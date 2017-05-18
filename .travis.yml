@@ -9,8 +9,6 @@ sudo: required
 services:
 - docker
 env:
-  global:
-  - DEBUG=electron-installer-flatpak,flatpak-bundler
   matrix:
   - NODE_INSTALLER=npm
   - NODE_INSTALLER=yarn
