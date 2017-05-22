@@ -1,4 +1,4 @@
-FROM malept/electron-forge-container:debian-jessie
+FROM malept/electron-forge-container:latest
 
 ENV CI=true DEBUG=electron-installer-flatpak,flatpak-bundler
 
