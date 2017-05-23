@@ -16,6 +16,9 @@ export default async (dir) => {
       const packageJSON = await readPackageJSON(mDir);
 
       if (packageJSON.devDependencies && packageJSON.devDependencies['electron-prebuilt-compile']) {
+        if (!/[0-9]/.test(packageJSON.devDependencies['electron-prebuilt-compile'][0])) {
+          throw 'You must depend on an EXACT version of "electron-prebuilt-compile" not a range';
+        }
       } else {
         throw 'You must depend on "electron-prebuilt-compile" in your devDependencies';
       }
